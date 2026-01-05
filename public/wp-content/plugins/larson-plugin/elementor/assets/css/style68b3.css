@@ -1,0 +1,7 @@
+.elementor-editor-active [data-aos^="fade"][data-aos^="fade"] {
+	opacity: 1;
+	transform: translateZ(0);
+}
+.elementor-editor-active .grid-sizer {
+	display: none;
+}

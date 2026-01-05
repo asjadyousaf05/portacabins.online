@@ -1,0 +1,190 @@
+html,
+body {
+  overflow: visible;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  overflow-x: hidden;
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #787878;
+  font-weight: 400;
+}
+
+.container-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.webpage {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.main-slider,
+.swiper-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+.swiper-custom-pagination {
+  max-width: 100vw;
+  overflow: hidden;
+}
+.swiper-custom-pagination ul {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .rtl .elementor-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Extra RTL mobile hardening to stop sideways drift on the home slider */
+@media (max-width: 1024px) {
+  .rtl .webpage,
+  .rtl .elementor-section,
+  .rtl .elementor-container,
+  .rtl .elementor-column,
+  .rtl .main-slider,
+  .rtl .swiper-container,
+  .rtl .swiper-wrapper {
+    max-width: 100vw;
+    overflow: hidden !important;
+    width: 100%;
+  }
+  .rtl .container,
+  .rtl .elementor-section.elementor-section-full_width > .elementor-container {
+    max-width: 100vw;
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin: 0 auto;
+  }
+  .rtl .swiper-wrapper {
+    margin: 0;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
+
+/* Clamp all top-level containers to viewport to avoid horizontal scroll/whitespace */
+html,
+body,
+#root,
+.container-page,
+.header,
+.header__inner {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  z-index: 1200;
+}
+
+.mobile-canvas,
+.mobile-canvas__nav,
+.footer,
+.footer__inner,
+.footer__builder,
+.footer .elementor-container,
+.footer .elementor-column {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.footer .elementor-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Prevent mobile canvas nav from overflowing on RTL with long labels */
+.mobile-canvas {
+  box-sizing: border-box;
+}
+.mobile-canvas__nav,
+.mobile-canvas__nav-h,
+.mobile-canvas .navigation__list,
+.mobile-canvas .navigation__dropdown {
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  overflow-x: hidden;
+}
+.mobile-canvas .navigation__link {
+  white-space: normal;
+  display: block;
+}
+
+/* Extra clamp for Arabic mobile: keep the off-canvas menu from forcing horizontal scroll */
+@media (max-width: 1024px) {
+  html[dir='rtl'] .mobile-canvas,
+  html[dir='rtl'] .mobile-canvas__nav,
+  html[dir='rtl'] .mobile-canvas__nav nav,
+  html[dir='rtl'] .mobile-canvas .navigation__list,
+  html[dir='rtl'] .mobile-canvas .navigation__dropdown {
+    max-width: 100vw;
+    width: 100%;
+    margin: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  html[dir='rtl'] .mobile-canvas * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
