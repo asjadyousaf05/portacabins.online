@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { servicesContent, servicePaths } from '../../content/servicesContent';
 import criticalBaseCss from '../../styles/critical-base.css?raw';
-import { ensureInlineStyles, ensureStylesheets, loadLegacyScripts, refreshLegacyUi } from '../../utils/legacy';
+import { ensureInlineStyles, ensureStylesheets } from '../../utils/legacy';
 
 type Props = {
   locale: 'en' | 'ar';
@@ -68,7 +68,6 @@ export const PortaCabinsPage = ({ locale }: Props) => {
     }
     ensureStylesheets(heroStyles, '/content/services/porta-cabins/index.html');
     ensureInlineStyles(inlineCss, 'services-inline');
-    loadLegacyScripts('/services/').then(refreshLegacyUi).catch(() => undefined);
   }, [locale]);
 
   if (!main) {

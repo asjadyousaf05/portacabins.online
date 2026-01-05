@@ -30,7 +30,11 @@ body {
 
 /* Keep the mobile overlay dark so the page doesn't flash white when toggling the menu */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.78) !important;
+  display: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  background: transparent !important;
+  z-index: -1 !important;
 }
 
 
@@ -324,6 +328,164 @@ body {
 
 .mobile-canvas .navigation__link {
   color: #111;
+}
+
+.header .mobile-canvas {
+  z-index: 100000 !important;
+  pointer-events: auto !important;
+}
+
+.mobile-canvas.mobile-canvas--opened {
+  pointer-events: auto !important;
+}
+
+.header__menu-toggle {
+  touch-action: manipulation;
+}
+
+@media (max-width: 991px) {
+  .header .container {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header__nav-shell {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mobile-canvas {
+    transform: translate3d(100%, 0, 0);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+    pointer-events: none;
+    background: #ffffff;
+    box-shadow: -12px 0 38px rgba(15, 23, 42, 0.14);
+    border-left: 1px solid rgba(15, 23, 42, 0.06);
+    padding: 24px 20px;
+  }
+
+  .mobile-canvas.mobile-canvas--opened {
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
+  }
+
+  .navigation__link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 0;
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: 0.01em;
+    position: relative;
+    padding-right: 44px;
+  }
+
+  .navigation__dropdown {
+    padding-left: 16px;
+    margin-left: 0;
+    margin-top: 6px;
+    border-left: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 6px 0 6px 16px;
+    display: block;
+    position: static;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    transition:
+      max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.22s ease,
+      visibility 0.22s ease;
+    will-change: max-height;
+  }
+
+  .navigation__caret,
+  .navigation__toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(15, 23, 42, 0.14);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.04);
+    color: #111;
+    font-size: 14px;
+    line-height: 1;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    position: absolute;
+    right: 8px;
+  }
+
+  .navigation__caret--open,
+  .navigation__toggle-icon--open {
+    transform: rotate(90deg);
+    box-shadow: 0 6px 12px rgba(15, 23, 42, 0.12);
+  }
+
+  .navigation__toggle-icon {
+    position: static;
+    right: auto;
+    left: auto;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    order: -1;
+    padding: 0;
+  }
+
+  .mobile-canvas__bottom {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .navigation__item--open > .navigation__link {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    padding-inline: 10px;
+    transition: background-color 0.18s ease, color 0.18s ease;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .navigation__item--open > .navigation__link .navigation__label {
+    font-weight: 700;
+  }
+
+  .navigation__dropdown .navigation__link {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .navigation__item + .navigation__item {
+    border-top: 1px solid rgba(15, 23, 42, 0.05);
+  }
+
+  .navigation__item--open > .navigation__dropdown {
+    display: block !important;
+    max-height: var(--submenu-height, 1200px);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 }
 
 .fab-menu {

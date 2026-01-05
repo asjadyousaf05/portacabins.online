@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import type { MouseEvent as ReactMouseEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 type HeaderProps = {
@@ -67,13 +67,32 @@ const copyMap = {
 export const Header = ({ locale }: HeaderProps) => {
   const location = useLocation();
   const headerRef = useRef<HTMLElement | null>(null);
+  const navShellRef = useRef<HTMLDivElement | null>(null);
+  const mobileCanvasRef = useRef<HTMLDivElement | null>(null);
+  const dropdownRefs = useRef<Record<string, HTMLUListElement | null>>({});
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>({});
+  const [dropdownHeights, setDropdownHeights] = useState<Record<string, number>>({});
   const [isDesktop, setIsDesktop] = useState<boolean>(() =>
     typeof window !== 'undefined' ? window.matchMedia('(min-width: 992px)').matches : true,
   );
-  const overlayRoot = useMemo(() => (typeof document !== 'undefined' ? document.createElement('div') : null), []);
   const c = locale === 'ar' ? copyMap.ar : copyMap.en;
+
+  const portaCabinChildren: NavItem[] = useMemo(
+    () => [
+      { key: 'portable-house', label: c.portableHouse, path: '/services/porta-cabins/portable-house' },
+      { key: 'portable-site-office', label: c.portableSiteOffice, path: '/services/porta-cabins/portable-site-office' },
+      { key: 'portable-labour-camps', label: c.portableLabourCamps, path: '/services/porta-cabins/portable-labour-camps' },
+      { key: 'portable-log-cabins', label: c.portableLogCabins, path: '/services/porta-cabins/portable-log-cabins' },
+      { key: 'portable-mosques', label: c.portableMosques, path: '/services/porta-cabins/portable-mosques' },
+      { key: 'portable-pantry', label: c.portablePantry, path: '/services/porta-cabins/portable-pantry' },
+      { key: 'portable-restrooms', label: c.portableRestrooms, path: '/services/porta-cabins/portable-restrooms' },
+      { key: 'portable-security-office', label: c.portableSecurityOffice, path: '/services/porta-cabins/portable-security-office' },
+      { key: 'portable-security-units', label: c.portableSecurityUnits, path: '/services/porta-cabins/portable-security-units' },
+      { key: 'portable-warehouse', label: c.portableWarehouse, path: '/services/porta-cabins/portable-warehouse' },
+    ],
+    [c],
+  );
 
   const navItems: NavItem[] = useMemo(
     () => [
@@ -87,18 +106,7 @@ export const Header = ({ locale }: HeaderProps) => {
             key: 'porta-cabins',
             label: c.portaCabins,
             path: '/services/porta-cabins',
-            children: [
-              { key: 'portable-house', label: c.portableHouse, path: '/services/porta-cabins/portable-house' },
-              { key: 'portable-site-office', label: c.portableSiteOffice, path: '/services/porta-cabins/portable-site-office' },
-              { key: 'portable-labour-camps', label: c.portableLabourCamps, path: '/services/porta-cabins/portable-labour-camps' },
-              { key: 'portable-log-cabins', label: c.portableLogCabins, path: '/services/porta-cabins/portable-log-cabins' },
-              { key: 'portable-mosques', label: c.portableMosques, path: '/services/porta-cabins/portable-mosques' },
-              { key: 'portable-pantry', label: c.portablePantry, path: '/services/porta-cabins/portable-pantry' },
-              { key: 'portable-restrooms', label: c.portableRestrooms, path: '/services/porta-cabins/portable-restrooms' },
-              { key: 'portable-security-office', label: c.portableSecurityOffice, path: '/services/porta-cabins/portable-security-office' },
-              { key: 'portable-security-units', label: c.portableSecurityUnits, path: '/services/porta-cabins/portable-security-units' },
-              { key: 'portable-warehouse', label: c.portableWarehouse, path: '/services/porta-cabins/portable-warehouse' },
-            ],
+            children: portaCabinChildren,
           },
           { key: 'aluminium', label: c.aluminium, path: '/services/aluminium' },
           { key: 'cutting-and-bending', label: c.cuttingBending, path: '/services/cutting-and-bending' },
@@ -109,7 +117,7 @@ export const Header = ({ locale }: HeaderProps) => {
       { key: 'about', label: c.about, path: '/about' },
       { key: 'contact', label: c.contact, path: '/contact' },
     ],
-    [c],
+    [c, portaCabinChildren],
   );
 
   useEffect(() => {
@@ -143,27 +151,77 @@ export const Header = ({ locale }: HeaderProps) => {
 
   useEffect(() => {
     if (isDesktop) {
-      setMobileOpen(false);
       setOpenDropdowns({});
+      setDropdownHeights({});
     }
   }, [isDesktop]);
 
-  useEffect(() => {
+  const closeSidebar = useCallback(() => {
+    if (typeof console !== 'undefined' && typeof console.trace === 'function') {
+      console.trace();
+    }
     setMobileOpen(false);
     setOpenDropdowns({});
-  }, [location.pathname]);
+  }, []);
+
+  const toggleMobile = useCallback(() => {
+    if (mobileOpen) {
+      closeSidebar();
+      return;
+    }
+    setMobileOpen(true);
+  }, [closeSidebar, mobileOpen]);
 
   useEffect(() => {
-    if (!overlayRoot || typeof document === 'undefined') return;
-    if (!document.body.contains(overlayRoot)) {
-      document.body.appendChild(overlayRoot);
-    }
-    return () => {
-      if (overlayRoot.parentNode === document.body) {
-        document.body.removeChild(overlayRoot);
+    if (!mobileOpen) return;
+    const handleOutside = (e: MouseEvent | PointerEvent | TouchEvent) => {
+      const target = e.target as Node | null;
+      if (!target) return;
+      const isInside = [mobileCanvasRef.current, navShellRef.current, headerRef.current].some(
+        (el) => el && (el === target || el.contains(target)),
+      );
+      if (isInside) return;
+      closeSidebar();
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeSidebar();
       }
     };
-  }, [overlayRoot]);
+    const downEvent: 'pointerdown' | 'mousedown' = 'PointerEvent' in window ? 'pointerdown' : 'mousedown';
+    document.addEventListener(downEvent, handleOutside, true);
+    document.addEventListener('keydown', handleKey, true);
+    return () => {
+      document.removeEventListener(downEvent, handleOutside, true);
+      document.removeEventListener('keydown', handleKey, true);
+    };
+  }, [closeSidebar, mobileOpen]);
+
+  useLayoutEffect(() => {
+    if (isDesktop) return;
+    const next: Record<string, number> = {};
+    Object.entries(dropdownRefs.current).forEach(([id, el]) => {
+      if (el) next[id] = el.scrollHeight;
+    });
+    setDropdownHeights(next);
+  }, [isDesktop, openDropdowns, dropdownRefs]);
+
+  useEffect(() => {
+    if (isDesktop) return;
+    const handleResize = () => {
+      const next: Record<string, number> = {};
+      Object.entries(dropdownRefs.current).forEach(([id, el]) => {
+        if (el) next[id] = el.scrollHeight;
+      });
+      setDropdownHeights(next);
+    };
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, [isDesktop]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -179,12 +237,6 @@ export const Header = ({ locale }: HeaderProps) => {
 
   const isActive = (path: string) =>
     location.pathname === path || (path !== '/' && location.pathname.startsWith(`${path}/`));
-
-  const toggleMobile = () => setMobileOpen((prev) => !prev);
-  const closeMobile = () => {
-    setMobileOpen(false);
-    setOpenDropdowns({});
-  };
 
   useEffect(() => {
     const styleId = 'header-desktop-nav-fix';
@@ -262,31 +314,68 @@ export const Header = ({ locale }: HeaderProps) => {
       const hasChildren = !!item.children?.length;
       const dropdownKey = parentKey ? `${parentKey}-${item.key}` : item.key;
       const isOpen = !isDesktop && !!openDropdowns[dropdownKey];
-      const dropdownStyle = isDesktop ? undefined : { display: isOpen ? 'block' : 'none' };
+      const dropdownId = `submenu-${dropdownKey}`;
 
       return (
         <li
           key={dropdownKey}
           className={`navigation__item menu-item${hasChildren ? ' menu-item-has-children dropdown' : ''}${
+            isOpen ? ' navigation__item--open' : ''
+          }${
             isActive(item.path) ? ' navigation__item--current' : ''
           }`}
+          data-dropdown-key={hasChildren ? dropdownKey : undefined}
         >
           <Link
-            className={`navigation__link animsition-link${hasChildren ? ' dropdown-toggle' : ''}`}
+            className={`navigation__link animsition-link${hasChildren ? ' dropdown-toggle' : ''}${
+              !isDesktop && hasChildren && isOpen ? ' opened' : ''
+            }`}
             to={item.path}
-            onClick={(e) => {
-              if (!isDesktop && hasChildren && !openDropdowns[dropdownKey]) {
-                e.preventDefault();
-                toggleDropdown(dropdownKey);
-                return;
+            aria-haspopup={hasChildren ? 'true' : undefined}
+            aria-expanded={hasChildren ? (isDesktop ? undefined : isOpen) : undefined}
+            aria-controls={hasChildren ? dropdownId : undefined}
+            onClick={(e: ReactMouseEvent<HTMLAnchorElement>) => {
+              if (!isDesktop && hasChildren) {
+                const targetEl = e.target as HTMLElement | null;
+                const isToggleIcon = targetEl && targetEl.closest('.navigation__toggle-icon');
+                if (!isToggleIcon) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  toggleDropdown(dropdownKey);
+                  return;
+                }
+                // allow navigation via arrow tap
               }
-              if (!isDesktop) closeMobile();
             }}
           >
-            {item.label}{' '}
+            {hasChildren && (
+              <i
+                className={`icon icon-down-open navigation__toggle-icon${isOpen ? ' navigation__toggle-icon--open' : ''}`}
+                aria-hidden="true"
+              >
+                {'->'}
+              </i>
+            )}
+            <span className="navigation__label">{item.label}</span>
           </Link>
           {hasChildren && (
-            <ul className="sub-menu navigation__dropdown" style={dropdownStyle}>
+            <ul
+              className="sub-menu navigation__dropdown"
+              id={dropdownId}
+              ref={(el) => {
+                dropdownRefs.current[dropdownId] = el;
+              }}
+              style={
+                !isDesktop
+                  ? {
+                      maxHeight: isOpen ? `${dropdownHeights[dropdownId] || 0}px` : '0px',
+                      opacity: isOpen ? 1 : 0,
+                      visibility: isOpen ? 'visible' : 'hidden',
+                      pointerEvents: isOpen ? 'auto' : 'none',
+                    }
+                  : undefined
+              }
+            >
               {renderItems(item.children!, dropdownKey)}
             </ul>
           )}
@@ -344,11 +433,12 @@ export const Header = ({ locale }: HeaderProps) => {
                       data-widget_type="larson-header-menu.default"
                     >
                       <div className="elementor-widget-container">
-                        <div className="container header__nav-shell">
+                        <div className="container header__nav-shell" ref={navShellRef}>
                           <div
                             className={`mobile-canvas __js_mobile-canvas header__mobile${mobileOpen ? ' mobile-canvas--opened mobile-canvas--social' : ''}`}
+                            ref={mobileCanvasRef}
                           >
-                            <button className="mobile-canvas__close" type="button" aria-label="Close menu" onClick={closeMobile}>
+                            <button className="mobile-canvas__close" type="button" aria-label="Close menu" onClick={closeSidebar}>
                               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
                                 <path d="M4 4l12 12m0-12L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                               </svg>
@@ -387,7 +477,7 @@ export const Header = ({ locale }: HeaderProps) => {
                           type="button"
                           aria-expanded={mobileOpen}
                           aria-controls="menu-header-menu"
-                          onClick={toggleMobile}
+                          onClick={() => toggleMobile()}
                         >
                           <span className="visually-hidden">Menu</span>
                         </button>
@@ -421,20 +511,6 @@ export const Header = ({ locale }: HeaderProps) => {
           </div>
         </div>
       </div>
-      {overlayRoot && typeof document !== 'undefined'
-        ? createPortal(
-            <div
-              className="overlay"
-              style={{
-                display: mobileOpen ? 'block' : 'none',
-                opacity: mobileOpen ? 1 : 0,
-                pointerEvents: mobileOpen ? 'auto' : 'none',
-              }}
-              onClick={closeMobile}
-            ></div>,
-            overlayRoot,
-          )
-        : null}
     </header>
   );
 };

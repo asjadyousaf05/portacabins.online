@@ -5,7 +5,6 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { IconSprite } from './components/IconSprite';
 import { LanguageToggle } from './components/LanguageToggle';
-import { MobileCanvas } from './components/MobileCanvas';
 import { PageContent } from './components/PageContent';
 import { Preloader } from './components/Preloader';
 import { FloatingMenu } from './components/FloatingMenu';
@@ -240,7 +239,6 @@ const App = () => {
       <Preloader />
       <div className="container-page">
         <Header locale={locale} />
-        <MobileCanvas locale={locale} />
         <main>
           <ContentRouter locale={locale} setLocale={setLocale} />
         </main>

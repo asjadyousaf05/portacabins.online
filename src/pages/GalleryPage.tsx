@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { siteCopy } from '../content/siteCopy';
-import { ensureInlineStyles, ensureStylesheets, loadLegacyScripts, refreshLegacyUi } from '../utils/legacy';
+import { ensureInlineStyles, ensureStylesheets } from '../utils/legacy';
 import { defaultSeo, seoMeta } from '../seo';
 import { useEffect } from 'react';
 
@@ -38,16 +38,6 @@ export const GalleryPage = ({ locale }: Props) => {
   useEffect(() => {
     ensureStylesheets(galleryStyles, '/content/gallery/index.html');
     ensureInlineStyles(inlineCss, 'gallery-inline');
-
-    const init = async () => {
-      await loadLegacyScripts('/gallery');
-      refreshLegacyUi();
-    };
-    if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(init, { timeout: 1200 });
-    } else {
-      setTimeout(init, 200);
-    }
   }, []);
 
   if (!page) return null;

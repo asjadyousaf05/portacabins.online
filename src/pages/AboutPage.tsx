@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import criticalBaseCss from '../styles/critical-base.css?raw';
-import { ensureInlineStyles, ensureStylesheets, loadLegacyScripts, refreshLegacyUi } from '../utils/legacy';
+import { ensureInlineStyles, ensureStylesheets } from '../utils/legacy';
 
 type Props = {
   locale: 'en' | 'ar';
@@ -82,7 +82,6 @@ export const AboutPage = ({ locale }: Props) => {
     }
     ensureStylesheets(styles, '/content/about/index.html');
     ensureInlineStyles(inlineCss, 'about-inline');
-    loadLegacyScripts('/about').then(refreshLegacyUi).catch(() => undefined);
   }, [locale]);
 
   useEffect(() => {

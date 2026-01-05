@@ -1,14 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation, useNavigate } from 'react-router-dom';
-import {
-  ensureInlineStyles,
-  ensureStylesheets,
-  loadLegacyScripts,
-  normalizeAssetHref,
-  normalizePath,
-  refreshLegacyUi,
-} from '../utils/legacy';
+import { ensureInlineStyles, ensureStylesheets, normalizeAssetHref, normalizePath } from '../utils/legacy';
 import { defaultSeo, seoMeta } from '../seo';
 import criticalBaseCss from '../styles/critical-base.css?raw';
 
@@ -192,25 +185,7 @@ export const PageContent = ({
         setHtml(main.innerHTML);
       }
 
-      const scheduleLegacy = () => {
-        const runner = async () => {
-          try {
-            await loadLegacyScripts(contentPath);
-            refreshLegacyUi();
-          } catch (scriptError) {
-            console.error(scriptError);
-          }
-        };
-        if ('requestIdleCallback' in window) {
-          (window as any).requestIdleCallback(runner, { timeout: 1200 });
-        } else {
-          setTimeout(runner, 150);
-        }
-      };
-
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
-      scheduleLegacy();
-
       if (pendingSections.length) {
         const appendLater = () => setSectionHtml(pendingSections);
         if ('requestIdleCallback' in window) {

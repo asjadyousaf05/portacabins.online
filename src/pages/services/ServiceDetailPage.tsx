@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { servicesContent, servicePaths } from '../../content/servicesContent';
 import criticalBaseCss from '../../styles/critical-base.css?raw';
-import { ensureInlineStyles, ensureStylesheets, loadLegacyScripts, refreshLegacyUi } from '../../utils/legacy';
+import { ensureInlineStyles, ensureStylesheets } from '../../utils/legacy';
 
 type Props = {
   locale: 'en' | 'ar';
@@ -65,7 +65,6 @@ export const ServiceDetailPage = ({ locale, path }: Props) => {
     ensureCriticalBase();
     ensureStylesheets(serviceStyles, path);
     ensureInlineStyles(inlineCss, 'service-detail-inline');
-    loadLegacyScripts('/services/').then(refreshLegacyUi).catch(() => undefined);
   }, [locale, path]);
 
   useEffect(() => {
