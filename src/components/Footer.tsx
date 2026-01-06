@@ -85,7 +85,9 @@ export const Footer = ({ locale }: FooterProps) => {
                             <p>{c.rights}</p>
                             <p>{c.developedBy}&nbsp;</p>
                             <p>
-                              <a href="https://wa.me/923144704840">Asjad Yousaf Khan</a>
+                              <a href="https://asjadyousaf.online" target="_blank" rel="noreferrer">
+                                Asjad Yousaf Khan
+                              </a>
                             </p>
                           </div>
                         </div>

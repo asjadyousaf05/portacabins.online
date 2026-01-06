@@ -212,10 +212,27 @@ export const Header = ({ locale }: HeaderProps) => {
     if (isDesktop) return;
     const next: Record<string, number> = {};
     Object.entries(dropdownRefs.current).forEach(([id, el]) => {
-      if (el) next[id] = el.scrollHeight;
+      if (!el) return;
+      // Measure natural height even if currently collapsed.
+      const prevMaxHeight = el.style.maxHeight;
+      const prevOpacity = el.style.opacity;
+      const prevVisibility = el.style.visibility;
+      const prevDisplay = el.style.display;
+      const prevPosition = el.style.position;
+      el.style.display = 'block';
+      el.style.position = 'relative';
+      el.style.maxHeight = 'none';
+      el.style.opacity = '1';
+      el.style.visibility = 'visible';
+      next[id] = el.scrollHeight;
+      el.style.maxHeight = prevMaxHeight;
+      el.style.opacity = prevOpacity;
+      el.style.visibility = prevVisibility;
+      el.style.display = prevDisplay;
+      el.style.position = prevPosition;
     });
     setDropdownHeights(next);
-  }, [isDesktop, openDropdowns, dropdownRefs]);
+  }, [isDesktop, locale, openDropdowns, dropdownRefs]);
 
   useEffect(() => {
     if (isDesktop) return;

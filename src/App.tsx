@@ -14,6 +14,113 @@ import { normalizePath } from './utils/legacy';
 import { loadStaticHtml } from './utils/staticHtml';
 import { lazy } from 'react';
 
+type SeoMeta = {
+  title: string;
+  description: string;
+  ogImage?: string;
+  robots?: string;
+};
+
+const baseUrl = 'https://portacabins.online';
+const defaultOgImage = `${baseUrl}/portacabins-logo.png`;
+
+const seoMetaMap: Record<string, SeoMeta> = {
+  '/': {
+    title: 'Porta Cabins | Portable Buildings, Site Offices, Labour Camps',
+    description:
+      'Premium portable cabins, turnkey site offices, labour camps, and custom modular buildings across Saudi Arabia with fast delivery and quality materials.',
+  },
+  '/about': {
+    title: 'About Porta Cabins | Modular Building Experts in KSA',
+    description: 'Learn about Porta Cabins, our experience delivering durable modular cabins, offices, and site solutions in Saudi Arabia.',
+  },
+  '/contact': {
+    title: 'Contact Porta Cabins | Get a Quote for Portable Buildings',
+    description: 'Talk to Porta Cabins for portable cabins, site offices, labour camps, and custom modular spaces. WhatsApp and phone support available.',
+  },
+  '/services': {
+    title: 'Services | Porta Cabins, Aluminium, Welding, Cutting & Bending',
+    description: 'Explore Porta Cabins services: modular buildings, aluminium fabrication, welding, and cutting & bending solutions for every project.',
+  },
+  '/services/porta-cabins': {
+    title: 'Porta Cabins Services | Factory, Offices & Ready Buildings',
+    description: 'Complete porta cabin solutions: factory-built offices, labour camps, houses, and custom modular buildings tailored to your site needs.',
+  },
+  '/services/aluminium': {
+    title: 'Aluminium Fabrication | Doors, Windows, Cladding',
+    description: 'High-quality aluminium fabrication for doors, windows, cladding, and custom designs built to last.',
+  },
+  '/services/cutting-and-bending': {
+    title: 'Cutting & Bending | Precision Metal Fabrication',
+    description: 'Accurate cutting and bending services for steel and aluminium components, ready for fast installation.',
+  },
+  '/services/welding': {
+    title: 'Welding Services | Structural, Industrial, Custom Fabrication',
+    description: 'Professional welding for structural steel, industrial repairs, and custom fabrication with strict quality and safety control.',
+  },
+  '/gallery': {
+    title: 'Project Gallery | Porta Cabins in Action',
+    description: 'Browse finished porta cabin projects, site offices, labour camps, and custom modular builds across Saudi Arabia.',
+  },
+  '/privacy-policy': {
+    title: 'Privacy Policy | Porta Cabins',
+    description: 'How Porta Cabins handles your data, cookies, and privacy across our website and services.',
+    robots: 'noindex,follow',
+  },
+};
+
+const serviceSeoMeta: Record<string, SeoMeta> = {
+  'portable-canteen': {
+    title: 'Portable Canteen Cabins | Hygienic Food Service Units',
+    description: 'Modular portable canteen cabins with ventilation, storage, and easy-to-clean finishes for camps and sites.',
+  },
+  'portable-house': {
+    title: 'Portable Houses | Comfortable Modular Living Units',
+    description: 'Durable, insulated portable houses with customizable layouts, ready for quick setup and long-term use.',
+  },
+  'portable-labour-camps': {
+    title: 'Portable Labour Camps | Turnkey Workforce Housing',
+    description: 'Complete labour camp cabins with sleeping, hygiene, and common areas for remote and urban projects.',
+  },
+  'portable-log-cabins': {
+    title: 'Portable Log Cabins | Warm, Durable Timber Look',
+    description: 'Log-style portable cabins that deliver warmth, durability, and fast deployment for residential or site needs.',
+  },
+  'portable-mosques': {
+    title: 'Portable Mosques | Ready Prayer Spaces Anywhere',
+    description: 'Portable mosque cabins designed with proper orientation, ablution options, and durable finishes for any location.',
+  },
+  'portable-pantry': {
+    title: 'Portable Pantry Cabins | Compact Food Prep Units',
+    description: 'Space-efficient pantry cabins with ventilation and storage, built for camps, events, and remote projects.',
+  },
+  'portable-restrooms': {
+    title: 'Portable Restrooms | Clean, Ventilated Sanitary Units',
+    description: 'Hygienic portable restroom cabins with quality fittings, ventilation, and easy maintenance.',
+  },
+  'portable-security-office': {
+    title: 'Portable Security Offices | Guard Cabins & Checkpoints',
+    description: 'Secure, visible portable security offices with windows, lighting, and durable construction for checkpoints.',
+  },
+  'portable-security-units': {
+    title: 'Portable Security Units | Guard Booths & Site Control',
+    description: 'Flexible guard units for site access control, built tough with clear visibility and fast deployment.',
+  },
+  'portable-site-office': {
+    title: 'Portable Site Offices | Ready-to-Use Workspace Cabins',
+    description: 'Turnkey portable site offices with workspace, storage, and climate comfort, delivered and installed quickly.',
+  },
+  'portable-warehouse': {
+    title: 'Portable Warehouses | Modular Storage Buildings',
+    description: 'Large-format portable warehouse cabins for secure on-site storage with rapid installation.',
+  },
+};
+
+const prettyLabel = (segment: string) =>
+  segment
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+
 const HomePage = lazy(() => import('./pages/HomePage').then((m) => ({ default: m.HomePage })));
 const AboutPage = lazy(() => import('./pages/AboutPage').then((m) => ({ default: m.AboutPage })));
 const ServicesPage = lazy(() => import('./pages/ServicesPage').then((m) => ({ default: m.ServicesPage })));
@@ -87,6 +194,76 @@ const ContentRouter = ({ locale, setLocale }: ContentRouterProps) => {
 
   const staticComponent = staticRoutes[normalizedPath];
 
+  const canonicalUrl = useMemo(() => `${baseUrl}${normalizedPath}`, [normalizedPath]);
+
+  const seo = useMemo<SeoMeta>(() => {
+    const direct = seoMetaMap[normalizedPath];
+    if (direct) return { ...direct, ogImage: direct.ogImage || defaultOgImage };
+    const slug = normalizedPath.split('/').filter(Boolean).pop() || '';
+    const serviceMeta = serviceSeoMeta[slug];
+    if (serviceMeta) return { ...serviceMeta, ogImage: serviceMeta.ogImage || defaultOgImage };
+    return {
+      title: 'Porta Cabins | Portable Buildings in Saudi Arabia',
+      description:
+        'Portable cabins, site offices, labour camps, aluminium fabrication, welding, and modular building solutions across Saudi Arabia.',
+      ogImage: defaultOgImage,
+    };
+  }, [normalizedPath]);
+
+  const breadcrumbLd = useMemo(() => {
+    if (normalizedPath === '/') return null;
+    const segments = normalizedPath.split('/').filter(Boolean);
+    const items = [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: baseUrl,
+      },
+    ];
+    let acc = '';
+    segments.forEach((segment, idx) => {
+      acc += `/${segment}`;
+      items.push({
+        '@type': 'ListItem',
+        position: idx + 2,
+        name: prettyLabel(segment),
+        item: `${baseUrl}${acc}`,
+      });
+    });
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: items,
+    };
+  }, [normalizedPath]);
+
+  const organizationLd = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      '@id': `${baseUrl}#organization`,
+      name: 'Porta Cabins',
+      url: baseUrl,
+      logo: `${baseUrl}/portacabins-logo.png`,
+      telephone: '+966506802316',
+      sameAs: [
+        'https://www.facebook.com/profile.php?id=61581004881100&mibextid=ZbWKwL',
+        'https://www.instagram.com/portacabins39/',
+        'https://www.linkedin.com/in/porta-cabins-b50820385',
+        'https://wa.me/966506802316',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        telephone: '+966506802316',
+        areaServed: 'SA',
+        availableLanguage: ['en', 'ar'],
+      },
+    }),
+    [],
+  );
+
   useEffect(() => {
     if (!match) return;
     const dataLayer = (window as any).dataLayer || ((window as any).dataLayer = []);
@@ -143,6 +320,28 @@ const ContentRouter = ({ locale, setLocale }: ContentRouterProps) => {
 
   return (
     <>
+      <Helmet>
+        <html lang={locale === 'ar' ? 'ar' : 'en'} dir={locale === 'ar' ? 'rtl' : 'ltr'} />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="robots" content={seo.robots || 'index,follow'} />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}${normalizedPath}`} />
+        <link rel="alternate" hrefLang="ar" href={`${baseUrl}${normalizedPath}`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}${normalizedPath}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Porta Cabins" />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={seo.ogImage || defaultOgImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:image" content={seo.ogImage || defaultOgImage} />
+        <script type="application/ld+json">{JSON.stringify(organizationLd)}</script>
+        {breadcrumbLd && <script type="application/ld+json">{JSON.stringify(breadcrumbLd)}</script>}
+      </Helmet>
       <LanguageToggle locale={locale} onToggle={toggleLocale} />
       <Suspense
         fallback={
@@ -232,9 +431,6 @@ const App = () => {
 
   return (
     <>
-      <Helmet>
-        <html lang="en-US" />
-      </Helmet>
       <IconSprite />
       <Preloader />
       <div className="container-page">
