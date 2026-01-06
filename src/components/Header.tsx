@@ -69,6 +69,7 @@ export const Header = ({ locale }: HeaderProps) => {
   const headerRef = useRef<HTMLElement | null>(null);
   const navShellRef = useRef<HTMLDivElement | null>(null);
   const mobileCanvasRef = useRef<HTMLDivElement | null>(null);
+  const prevPathRef = useRef<string>(location.pathname);
   const dropdownRefs = useRef<Record<string, HTMLUListElement | null>>({});
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [openDropdowns, setOpenDropdowns] = useState<Record<string, boolean>>({});
@@ -171,6 +172,16 @@ export const Header = ({ locale }: HeaderProps) => {
     }
     setMobileOpen(true);
   }, [closeSidebar, mobileOpen]);
+
+  useEffect(() => {
+    const prevPath = prevPathRef.current;
+    if (location.pathname !== prevPath) {
+      prevPathRef.current = location.pathname;
+      if (mobileOpen && !isDesktop) {
+        closeSidebar();
+      }
+    }
+  }, [closeSidebar, isDesktop, location.pathname, mobileOpen]);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -345,6 +356,10 @@ export const Header = ({ locale }: HeaderProps) => {
                   return;
                 }
                 // allow navigation via arrow tap
+              }
+
+              if (!isDesktop && !hasChildren) {
+                closeSidebar();
               }
             }}
           >
