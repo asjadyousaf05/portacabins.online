@@ -1,37 +1,37 @@
 ﻿import type { Locale } from './siteCopy';
 
 
- type GalleryItem = { src: string; alt: string };
+type GalleryItem = { src: string; alt: string };
 
- export type ServiceContent = {
-   name: string;
-   heroTitle?: string;
-   heroKicker?: string;
-   intro: string;
-   bullets: string[];
-   highlights?: string[];
-   heroImage: string;
-   heroAlt: string;
-   cardImage?: string;
-   cardAlt?: string;
-   gallery: GalleryItem[];
-   seo: { title: string; description: string; keywords: string[] };
- };
+export type ServiceContent = {
+  name: string;
+  heroTitle?: string;
+  heroKicker?: string;
+  intro: string;
+  bullets: string[];
+  highlights?: string[];
+  heroImage: string;
+  heroAlt: string;
+  cardImage?: string;
+  cardAlt?: string;
+  gallery: GalleryItem[];
+  seo: { title: string; description: string; keywords: string[] };
+};
 
- export type ServicesCopy = {
-   overview: {
-     title: string;
-     description: string;
-     heroImage: string;
-     heroAlt: string;
-     cards: { path: string; title: string; summary: string; image: string; alt: string }[];
-   };
-   services: Record<string, ServiceContent>;
- };
+export type ServicesCopy = {
+  overview: {
+    title: string;
+    description: string;
+    heroImage: string;
+    heroAlt: string;
+    cards: { path: string; title: string; summary: string; image: string; alt: string }[];
+  };
+  services: Record<string, ServiceContent>;
+};
 
- const img = (file: string) => `/wp-content/uploads/2025/09/${file}`;
+const img = (file: string) => `/wp-content/uploads/2025/09/${file}`;
 
- const servicesEn: Record<string, ServiceContent> = {
+const servicesEn: Record<string, ServiceContent> = {
   "/services/porta-cabins": {
     name: "Portable Cabins",
     heroKicker: "Turnkey modular spaces",
@@ -44,13 +44,15 @@
       "Crane-ready structures for rapid placement",
       "Fast delivery and onsite commissioning",
     ],
-    heroImage: img('portable-cabin-1920x1080.webp'),
+    heroImage: img('PORTACABIN9.webp'),
     heroAlt: "Portable cabin exterior in Jeddah",
-    cardImage: img('portable-cabin-1920x1440.webp'),
+    cardImage: img('PORTACABIN-1-IMAGE.webp'),
     gallery: [
-      { src: img('portable-cabin-1920x1440.webp'), alt: "Portable cabin exterior" },
-      { src: img('IMG-20250919-WA0066-1920x1440.webp'), alt: "Portable cabin side view" },
-      { src: img('IMG-20250919-WA0064-1920x1440.webp'), alt: "Portable cabin installation" },
+      { src: img('PORTACABIN2.webp'), alt: "Portable cabin exterior" },
+      { src: img('PORTACABIN3.webp'), alt: "Portable cabin side view" },
+      { src: img('PORTACABIN4.webp'), alt: "Portable cabin installation" },
+      { src: img('PORTACABIN5.webp'), alt: "Portable office cabin" },
+      { src: img('PORTACABIN6.webp'), alt: "Portable cabin interior" },
     ],
     seo: {
       title: "Portable Cabins in Jeddah | Portacabins",
@@ -77,12 +79,12 @@
       "Electrical and plumbing ready for hookup",
       "Clean, durable interior finishes",
     ],
-    heroImage: img('portable-house-2.webp'),
+    heroImage: img('PORTACABIN4.webp'),
     heroAlt: "Portable house exterior",
     gallery: [
-      { src: img('portable-house-2.webp'), alt: "Portable house facade" },
-      { src: img('IMG-20250919-WA0063-1920x2560.webp'), alt: "Interior cabin corridor" },
-      { src: img('IMG-20250919-WA0059.webp'), alt: "Portable cabin at night" },
+      { src: img('PORTACABIN4.webp'), alt: "Portable house facade" },
+      { src: img('PORTACABIN5.webp'), alt: "Portable house side view" },
+      { src: img('PORTACABIN6.webp'), alt: "Portable cabin interior" },
     ],
     seo: {
       title: "Portable Houses in Jeddah | Portacabins",
@@ -102,12 +104,12 @@
       "Ventilation and optional AC",
       "Easy-to-clean finishes for heavy use",
     ],
-    heroImage: img('portacains-portable-labour-quarter-cabin.webp'),
+    heroImage: img('PORTACABIN10.webp'),
     heroAlt: "Portable labour camp cabin",
     gallery: [
-      { src: img('portacains-portable-labour-quarter-cabin.webp'), alt: "Labour camp exterior" },
-      { src: img('Stock-32-x-10-Portable-Cabin-External-1-1280x964-1-e1758281919417.webp'), alt: "Portable camp entrance" },
-      { src: img('IMG-20250919-WA0062-1920x1440.webp'), alt: "Cabin rooms layout" },
+      { src: img('PORTACABIN10.webp'), alt: "Labour camp exterior" },
+      { src: img('PORTACABIN8.webp'), alt: "Portable camp entrance" },
+      { src: img('PORTACABIN7.webp'), alt: "Cabin rooms layout" },
     ],
     seo: {
       title: "Portable Labour Camps in Jeddah | Portacabins",
@@ -277,12 +279,12 @@
       "Insulated and quiet interiors",
       "Fast delivery to active sites",
     ],
-    heroImage: img('380909_PRE-FAB-PORTA-CABINOFFICE-1152x1080.webp'),
+    heroImage: img('PORTACABIN2.webp'),
     heroAlt: "Portable site office exterior",
     gallery: [
-      { src: img('380909_PRE-FAB-PORTA-CABINOFFICE-1152x1080.webp'), alt: "Site office cabin" },
-      { src: img('IMG-20250919-WA0066-1920x1440.webp'), alt: "Office cabin side view" },
-      { src: img('IMG-20250919-WA0063-1920x2560.webp'), alt: "Office interior corridor" },
+      { src: img('PORTACABIN2.webp'), alt: "Site office cabin" },
+      { src: img('PORTACABIN3.webp'), alt: "Office cabin side view" },
+      { src: img('PORTACABIN6.webp'), alt: "Office interior corridor" },
     ],
     seo: {
       title: "Portable Site Offices in Jeddah | Portacabins",
@@ -302,12 +304,12 @@
       "Secure doors and locks",
       "Custom sizes for storage needs",
     ],
-    heroImage: img('portable-warehouse-1.webp'),
+    heroImage: img('PORTACABIN8.webp'),
     heroAlt: "Portable warehouse cabin",
     gallery: [
-      { src: img('portable-warehouse-1.webp'), alt: "Portable warehouse exterior" },
-      { src: img('IMG-20250919-WA0064-1920x1440.webp'), alt: "Warehouse cabin front" },
-      { src: img('IMG-20250919-WA0066-1920x1440.webp'), alt: "Storage cabin in yard" },
+      { src: img('PORTACABIN8.webp'), alt: "Portable warehouse exterior" },
+      { src: img('PORTACABIN7.webp'), alt: "Warehouse cabin front" },
+      { src: img('PORTACABIN5.webp'), alt: "Storage cabin in yard" },
     ],
     seo: {
       title: "Portable Warehouse Cabins in Jeddah | Portacabins",
@@ -327,12 +329,12 @@
       "Easy-clean hygienic surfaces",
       "Power and water points ready",
     ],
-    heroImage: img('portacabins-portable-canteen.webp'),
+    heroImage: img('PORTACABIN6.webp'),
     heroAlt: "Portable canteen cabin",
     gallery: [
-      { src: img('portacabins-portable-canteen.webp'), alt: "Canteen cabin exterior" },
-      { src: img('portable-cabin-1920x1440.webp'), alt: "Canteen cabin side view" },
-      { src: img('IMG-20250919-WA0062-1920x1440.webp'), alt: "Interior aisle" },
+      { src: img('PORTACABIN6.webp'), alt: "Canteen cabin exterior" },
+      { src: img('PORTACABIN5.webp'), alt: "Canteen cabin side view" },
+      { src: img('PORTACABIN4.webp'), alt: "Interior aisle" },
     ],
     seo: {
       title: "Portable Canteen Cabins in Jeddah | Portacabins",
@@ -433,13 +435,15 @@ const servicesAr: Record<string, ServiceContent> = {
       "هياكل جاهزة للرفع بالكرين والنقل السريع",
       "تسليم وتشغيل ميداني بسرعة",
     ],
-    heroImage: img('portable-cabin-1920x1080.webp'),
+    heroImage: img('PORTACABIN9.webp'),
     heroAlt: "واجهة كبينة متنقلة في جدة",
-    cardImage: img('portable-cabin-1920x1440.webp'),
+    cardImage: img('PORTACABIN-1-IMAGE.webp'),
     gallery: [
-      { src: img('portable-cabin-1920x1440.webp'), alt: "كبينة متنقلة من الخارج" },
-      { src: img('IMG-20250919-WA0066-1920x1440.webp'), alt: "منظر جانبي لكبينة متنقلة" },
-      { src: img('IMG-20250919-WA0064-1920x1440.webp'), alt: "تركيب كبينة متنقلة" },
+      { src: img('PORTACABIN2.webp'), alt: "كبينة متنقلة من الخارج" },
+      { src: img('PORTACABIN3.webp'), alt: "منظر جانبي لكبينة متنقلة" },
+      { src: img('PORTACABIN4.webp'), alt: "تركيب كبينة متنقلة" },
+      { src: img('PORTACABIN5.webp'), alt: "مكتب محمول" },
+      { src: img('PORTACABIN6.webp'), alt: "داخل الكبينة" },
     ],
     seo: {
       title: "كبائن متنقلة في جدة | بورتاكابين",
@@ -454,12 +458,12 @@ const servicesAr: Record<string, ServiceContent> = {
     intro:
       "بيوت متنقلة معزولة ومجهزة للتكييف والسباكة بتشطيبات نظيفة، مناسبة لسكن الأسر أو الموظفين.",
     bullets: ["مخططات مرنة للغرف والمعيشة", "عزل حراري وصوتي متين", "تجهيز كهرباء وسباكة جاهز للتوصيل", "تشطيبات داخلية نظيفة"],
-    heroImage: img('portable-house-2.webp'),
+    heroImage: img('PORTACABIN4.webp'),
     heroAlt: "بيت متنقل من الخارج",
     gallery: [
-      { src: img('portable-house-2.webp'), alt: "واجهة بيت متنقل" },
-      { src: img('IMG-20250919-WA0063-1920x2560.webp'), alt: "ممر داخلي في الكبينة" },
-      { src: img('IMG-20250919-WA0059.webp'), alt: "كبينة مضاءة ليلاً" },
+      { src: img('PORTACABIN4.webp'), alt: "واجهة بيت متنقل" },
+      { src: img('PORTACABIN5.webp'), alt: "منظر جانبي للبيت" },
+      { src: img('PORTACABIN6.webp'), alt: "ممر داخلي في الكبينة" },
     ],
     seo: {
       title: "بيوت متنقلة في جدة | بورتاكابين",
@@ -479,12 +483,12 @@ const servicesAr: Record<string, ServiceContent> = {
       "تهوية وتكييف اختياري",
       "تشطيبات سهلة التنظيف للضغط العالي",
     ],
-    heroImage: img('portacains-portable-labour-quarter-cabin.webp'),
+    heroImage: img('PORTACABIN10.webp'),
     heroAlt: "كبينات سكن عمال متنقلة",
     gallery: [
-      { src: img('portacains-portable-labour-quarter-cabin.webp'), alt: "واجهة سكن عمال متنقل" },
-      { src: img('Stock-32-x-10-Portable-Cabin-External-1-1280x964-1-e1758281919417.webp'), alt: "مدخل كبينة سكن عمال" },
-      { src: img('IMG-20250919-WA0062-1920x1440.webp'), alt: "توزيع غرف داخل الكبينة" },
+      { src: img('PORTACABIN10.webp'), alt: "واجهة سكن عمال متنقل" },
+      { src: img('PORTACABIN8.webp'), alt: "مدخل كبينة سكن عمال" },
+      { src: img('PORTACABIN7.webp'), alt: "توزيع غرف داخل الكبينة" },
     ],
     seo: {
       title: "سكن عمال متنقل في جدة | بورتاكابين",
@@ -653,12 +657,12 @@ const servicesAr: Record<string, ServiceContent> = {
       "عزل يضمن هدوء الداخل",
       "تسليم سريع للمشاريع القائمة",
     ],
-    heroImage: img('380909_PRE-FAB-PORTA-CABINOFFICE-1152x1080.webp'),
+    heroImage: img('PORTACABIN2.webp'),
     heroAlt: "مكتب موقع متنقل",
     gallery: [
-      { src: img('380909_PRE-FAB-PORTA-CABINOFFICE-1152x1080.webp'), alt: "واجهة مكتب موقع" },
-      { src: img('IMG-20250919-WA0066-1920x1440.webp'), alt: "منظر جانبي لمكتب موقع" },
-      { src: img('IMG-20250919-WA0063-1920x2560.webp'), alt: "ممر داخلي في مكتب الموقع" },
+      { src: img('PORTACABIN2.webp'), alt: "واجهة مكتب موقع" },
+      { src: img('PORTACABIN3.webp'), alt: "منظر جانبي لمكتب موقع" },
+      { src: img('PORTACABIN6.webp'), alt: "ممر داخلي في مكتب الموقع" },
     ],
     seo: {
       title: "مكاتب مواقع متنقلة في جدة | بورتاكابين",
@@ -678,12 +682,12 @@ const servicesAr: Record<string, ServiceContent> = {
       "أبواب وأقفال أمان",
       "أحجام مخصصة لاحتياجات التخزين",
     ],
-    heroImage: img('portable-warehouse-1.webp'),
+    heroImage: img('PORTACABIN8.webp'),
     heroAlt: "مستودع متنقل",
     gallery: [
-      { src: img('portable-warehouse-1.webp'), alt: "واجهة مستودع متنقل" },
-      { src: img('IMG-20250919-WA0064-1920x1440.webp'), alt: "مستودع متنقل في الموقع" },
-      { src: img('IMG-20250919-WA0066-1920x1440.webp'), alt: "كبينة تخزين في الساحة" },
+      { src: img('PORTACABIN8.webp'), alt: "واجهة مستودع متنقل" },
+      { src: img('PORTACABIN7.webp'), alt: "مستودع متنقل في الموقع" },
+      { src: img('PORTACABIN5.webp'), alt: "كبينة تخزين في الساحة" },
     ],
     seo: {
       title: "مستودعات متنقلة في جدة | بورتاكابين",
@@ -703,12 +707,12 @@ const servicesAr: Record<string, ServiceContent> = {
       "أسطح وتشطيبات صحية سهلة التنظيف",
       "نقاط كهرباء ومياه جاهزة",
     ],
-    heroImage: img('portacabins-portable-canteen.webp'),
+    heroImage: img('PORTACABIN6.webp'),
     heroAlt: "كافتيريا متنقلة",
     gallery: [
-      { src: img('portacabins-portable-canteen.webp'), alt: "واجهة كافتيريا متنقلة" },
-      { src: img('portable-cabin-1920x1440.webp'), alt: "منظر جانبي لكافتيريا" },
-      { src: img('IMG-20250919-WA0062-1920x1440.webp'), alt: "ممر داخلي للكافتيريا" },
+      { src: img('PORTACABIN6.webp'), alt: "واجهة كافتيريا متنقلة" },
+      { src: img('PORTACABIN5.webp'), alt: "منظر جانبي لكافتيريا" },
+      { src: img('PORTACABIN4.webp'), alt: "ممر داخلي للكافتيريا" },
     ],
     seo: {
       title: "كافتيريا متنقلة في جدة | بورتاكابين",

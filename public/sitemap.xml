@@ -1,282 +1,282 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://portacabins.online/</loc>
     <lastmod>2026-01-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/' />
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/" />
   </url>
   <url>
     <loc>https://portacabins.online/about</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/about' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/about' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/about' />
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/about" />
   </url>
   <url>
     <loc>https://portacabins.online/contact</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/contact' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/contact' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/contact' />
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/contact" />
   </url>
   <url>
     <loc>https://portacabins.online/gallery</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/gallery' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/gallery' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/gallery' />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/gallery" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/gallery" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/gallery" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-canteen</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-canteen' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-canteen' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-canteen' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-canteen" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-canteen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-canteen" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-house</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-house' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-house' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-house' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-house" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-house" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-house" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-labour-camps</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-labour-camps' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-labour-camps' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-labour-camps' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-labour-camps" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-labour-camps" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-labour-camps" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-log-cabins</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-log-cabins' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-log-cabins' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-log-cabins' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-log-cabins" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-log-cabins" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-log-cabins" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-mosques</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-mosques' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-mosques' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-mosques' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-mosques" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-mosques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-mosques" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-pantry</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-pantry' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-pantry' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-pantry' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-pantry" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-pantry" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-pantry" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-restrooms</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-restrooms' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-restrooms' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-restrooms' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-restrooms" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-restrooms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-restrooms" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-security-office</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-security-office' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-security-office' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-security-office' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-security-office" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-security-office" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-security-office" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-security-units</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-security-units' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-security-units' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-security-units' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-security-units" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-security-units" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-security-units" />
   </url>
   <url>
     <loc>https://portacabins.online/porta-cabins/portable-warehouse</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/porta-cabins/portable-warehouse' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/porta-cabins/portable-warehouse' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/porta-cabins/portable-warehouse' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/porta-cabins/portable-warehouse" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/porta-cabins/portable-warehouse" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/porta-cabins/portable-warehouse" />
   </url>
   <url>
     <loc>https://portacabins.online/privacy-policy</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/privacy-policy' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/privacy-policy' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/privacy-policy' />
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/privacy-policy" />
   </url>
   <url>
     <loc>https://portacabins.online/services</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services' />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services" />
   </url>
   <url>
     <loc>https://portacabins.online/services/aluminium</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/aluminium' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/aluminium' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/aluminium' />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/aluminium" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/aluminium" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/aluminium" />
   </url>
   <url>
     <loc>https://portacabins.online/services/cutting-and-bending</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/cutting-and-bending' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/cutting-and-bending' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/cutting-and-bending' />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/cutting-and-bending" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/cutting-and-bending" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/cutting-and-bending" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-canteen</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-canteen' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-canteen' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-canteen' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-canteen" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-canteen" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-canteen" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-house</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-house' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-house' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-house' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-house" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-house" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-house" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-labour-camps</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-labour-camps' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-labour-camps' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-labour-camps' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-labour-camps" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-labour-camps" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-labour-camps" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-log-cabins</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-log-cabins' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-log-cabins' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-log-cabins' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-log-cabins" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-log-cabins" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-log-cabins" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-mosques</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-mosques' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-mosques' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-mosques' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-mosques" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-mosques" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-mosques" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-pantry</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-pantry' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-pantry' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-pantry' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-pantry" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-pantry" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-pantry" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-restrooms</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-restrooms' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-restrooms' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-restrooms' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-restrooms" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-restrooms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-restrooms" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-security-office</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-security-office' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-security-office' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-security-office' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-security-office" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-security-office" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-security-office" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-security-units</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-security-units' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-security-units' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-security-units' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-security-units" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-security-units" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-security-units" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-site-office</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-site-office' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-site-office' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-site-office' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-site-office" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-site-office" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-site-office" />
   </url>
   <url>
     <loc>https://portacabins.online/services/porta-cabins/portable-warehouse</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/porta-cabins/portable-warehouse' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/porta-cabins/portable-warehouse' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/porta-cabins/portable-warehouse' />
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/porta-cabins/portable-warehouse" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/porta-cabins/portable-warehouse" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/porta-cabins/portable-warehouse" />
   </url>
   <url>
     <loc>https://portacabins.online/services/welding</loc>
     <lastmod>2026-01-06</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel='alternate' hreflang='en' href='https://portacabins.online/services/welding' />
-    <xhtml:link rel='alternate' hreflang='ar' href='https://portacabins.online/services/welding' />
-    <xhtml:link rel='alternate' hreflang='x-default' href='https://portacabins.online/services/welding' />
+    <xhtml:link rel="alternate" hreflang="en" href="https://portacabins.online/services/welding" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portacabins.online/services/welding" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portacabins.online/services/welding" />
   </url>
 </urlset>

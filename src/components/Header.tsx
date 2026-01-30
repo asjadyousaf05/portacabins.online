@@ -347,17 +347,14 @@ export const Header = ({ locale }: HeaderProps) => {
       return (
         <li
           key={dropdownKey}
-          className={`navigation__item menu-item${hasChildren ? ' menu-item-has-children dropdown' : ''}${
-            isOpen ? ' navigation__item--open' : ''
-          }${
-            isActive(item.path) ? ' navigation__item--current' : ''
-          }`}
+          className={`navigation__item menu-item${hasChildren ? ' menu-item-has-children dropdown' : ''}${isOpen ? ' navigation__item--open' : ''
+            }${isActive(item.path) ? ' navigation__item--current' : ''
+            }`}
           data-dropdown-key={hasChildren ? dropdownKey : undefined}
         >
           <Link
-            className={`navigation__link animsition-link${hasChildren ? ' dropdown-toggle' : ''}${
-              !isDesktop && hasChildren && isOpen ? ' opened' : ''
-            }`}
+            className={`navigation__link animsition-link${hasChildren ? ' dropdown-toggle' : ''}${!isDesktop && hasChildren && isOpen ? ' opened' : ''
+              }`}
             to={item.path}
             aria-haspopup={hasChildren ? 'true' : undefined}
             aria-expanded={hasChildren ? (isDesktop ? undefined : isOpen) : undefined}
@@ -400,11 +397,11 @@ export const Header = ({ locale }: HeaderProps) => {
               style={
                 !isDesktop
                   ? {
-                      maxHeight: isOpen ? `${dropdownHeights[dropdownId] || 0}px` : '0px',
-                      opacity: isOpen ? 1 : 0,
-                      visibility: isOpen ? 'visible' : 'hidden',
-                      pointerEvents: isOpen ? 'auto' : 'none',
-                    }
+                    maxHeight: isOpen ? `${dropdownHeights[dropdownId] || 0}px` : '0px',
+                    opacity: isOpen ? 1 : 0,
+                    visibility: isOpen ? 'visible' : 'hidden',
+                    pointerEvents: isOpen ? 'auto' : 'none',
+                  }
                   : undefined
               }
             >
@@ -416,133 +413,157 @@ export const Header = ({ locale }: HeaderProps) => {
     });
 
   return (
-    <header className="header __js_fixed-header" id="header" ref={headerRef} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="header__inner">
-        <div className="header__builder">
-          <div data-elementor-type="wp-post" data-elementor-id="660" className="elementor elementor-660">
-            <section
-              className="elementor-section elementor-top-section elementor-element elementor-element-3709333 elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default"
-              data-id="3709333"
-              data-element_type="section"
+    <>
+      {/* Top Call Bar */}
+      <div className="header-call-bar">
+        <div className="header-call-bar__inner">
+          <a href="tel:+966506802316" className="header-call-bar__button">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
             >
-              <div className="elementor-container elementor-column-gap-no">
-                <div
-                  className="elementor-column elementor-col-16 elementor-top-column elementor-element elementor-element-3e82d79"
-                  data-id="3e82d79"
-                  data-element_type="column"
-                >
-                  <div className="elementor-widget-wrap elementor-element-populated">
-                    <div
-                      className="elementor-element elementor-element-3078456 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-larson-header-logo"
-                      data-id="3078456"
-                      data-element_type="widget"
-                      data-widget_type="larson-header-logo.default"
-                    >
-                      <div className="elementor-widget-container">
-                        <Link className="header__logo logo" to="/" title="Porta Cabins">
-                          <span className="logo__large">
-                            <span>{c.logoLarge}</span>
-                          </span>
-                          <span className="logo__small">
-                            <span>{c.logoSmall}</span>
-                          </span>
-                        </Link>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>{c.phone}</span>
+          </a>
+        </div>
+      </div>
+
+      <header className="header __js_fixed-header" id="header" ref={headerRef} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+        <div className="header__inner">
+          <div className="header__builder">
+            <div data-elementor-type="wp-post" data-elementor-id="660" className="elementor elementor-660">
+              <section
+                className="elementor-section elementor-top-section elementor-element elementor-element-3709333 elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default"
+                data-id="3709333"
+                data-element_type="section"
+              >
+                <div className="elementor-container elementor-column-gap-no">
+                  <div
+                    className="elementor-column elementor-col-16 elementor-top-column elementor-element elementor-element-3e82d79"
+                    data-id="3e82d79"
+                    data-element_type="column"
+                  >
+                    <div className="elementor-widget-wrap elementor-element-populated">
+                      <div
+                        className="elementor-element elementor-element-3078456 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-larson-header-logo"
+                        data-id="3078456"
+                        data-element_type="widget"
+                        data-widget_type="larson-header-logo.default"
+                      >
+                        <div className="elementor-widget-container">
+                          <Link className="header__logo logo" to="/" title="Porta Cabins">
+                            <span className="logo__large">
+                              <span>{c.logoLarge}</span>
+                            </span>
+                            <span className="logo__small">
+                              <span>{c.logoSmall}</span>
+                            </span>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div
-                  className="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-a186ae5"
-                  data-id="a186ae5"
-                  data-element_type="column"
-                >
-                  <div className="elementor-widget-wrap elementor-element-populated">
-                    <div
-                      className="elementor-element elementor-element-ec5bf44 elementor-widget__width-initial elementor-widget elementor-widget-larson-header-menu"
-                      data-id="ec5bf44"
-                      data-element_type="widget"
-                      data-widget_type="larson-header-menu.default"
-                    >
-                      <div className="elementor-widget-container">
-                        <div className="container header__nav-shell" ref={navShellRef}>
-                          <div
-                            className={`mobile-canvas __js_mobile-canvas header__mobile${mobileOpen ? ' mobile-canvas--opened mobile-canvas--social' : ''}`}
-                            ref={mobileCanvasRef}
-                          >
-                            <button className="mobile-canvas__close" type="button" aria-label="Close menu" onClick={closeSidebar}>
-                              <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
-                                <path d="M4 4l12 12m0-12L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                              </svg>
-                            </button>
+                  <div
+                    className="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-a186ae5"
+                    data-id="a186ae5"
+                    data-element_type="column"
+                  >
+                    <div className="elementor-widget-wrap elementor-element-populated">
+                      <div
+                        className="elementor-element elementor-element-ec5bf44 elementor-widget__width-initial elementor-widget elementor-widget-larson-header-menu"
+                        data-id="ec5bf44"
+                        data-element_type="widget"
+                        data-widget_type="larson-header-menu.default"
+                      >
+                        <div className="elementor-widget-container">
+                          <div className="container header__nav-shell" ref={navShellRef}>
+                            <div
+                              className={`mobile-canvas __js_mobile-canvas header__mobile${mobileOpen ? ' mobile-canvas--opened mobile-canvas--social' : ''}`}
+                              ref={mobileCanvasRef}
+                            >
+                              <button className="mobile-canvas__close" type="button" aria-label="Close menu" onClick={closeSidebar}>
+                                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                                  <path d="M4 4l12 12m0-12L4 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                                </svg>
+                              </button>
 
-                            <nav className="mobile-canvas__nav navigation header__nav" aria-label="Primary navigation">
-                              <ul id="menu-header-menu" className="navigation__list header__nav-list">
-                                {renderItems(navItems)}
-                              </ul>
-                            </nav>
+                              <nav className="mobile-canvas__nav navigation header__nav" aria-label="Primary navigation">
+                                <ul id="menu-header-menu" className="navigation__list header__nav-list">
+                                  {renderItems(navItems)}
+                                </ul>
+                              </nav>
 
-                            <div className="mobile-canvas__bottom">
-                              <a className="mobile-canvas__phone" href="https://wa.me/966506802316">
-                                {c.phone}
-                              </a>
-                              <div className="mobile-canvas__social">
-                                <a className="fab-menu__link" href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
-                                  <span className="fab-menu__icon fab-menu__icon--facebook">f</span>
+                              <div className="mobile-canvas__bottom">
+                                <a className="mobile-canvas__phone" href="https://wa.me/966506802316">
+                                  {c.phone}
                                 </a>
-                                <a className="fab-menu__link" href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                                  <span className="fab-menu__icon fab-menu__icon--linkedin">in</span>
-                                </a>
-                                <a className="fab-menu__link" href="https://wa.me/966506802316" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-                                  <span className="fab-menu__icon fab-menu__icon--whatsapp">wa</span>
-                                </a>
-                                <a className="fab-menu__link" href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
-                                  <span className="fab-menu__icon fab-menu__icon--instagram">ig</span>
-                                </a>
+                                <div className="mobile-canvas__social">
+                                  <a className="fab-menu__link" href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+                                    <span className="fab-menu__icon fab-menu__icon--facebook">f</span>
+                                  </a>
+                                  <a className="fab-menu__link" href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                                    <span className="fab-menu__icon fab-menu__icon--linkedin">in</span>
+                                  </a>
+                                  <a className="fab-menu__link" href="https://wa.me/966506802316" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                                    <span className="fab-menu__icon fab-menu__icon--whatsapp">wa</span>
+                                  </a>
+                                  <a className="fab-menu__link" href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+                                    <span className="fab-menu__icon fab-menu__icon--instagram">ig</span>
+                                  </a>
+                                </div>
                               </div>
                             </div>
                           </div>
+
+                          <button
+                            className={`header__menu-toggle menu-toggle${mobileOpen ? ' menu-toggle--opened' : ''}`}
+                            type="button"
+                            aria-expanded={mobileOpen}
+                            aria-controls="menu-header-menu"
+                            onClick={() => toggleMobile()}
+                          >
+                            <span className="visually-hidden">Menu</span>
+                          </button>
                         </div>
+                      </div>
+                    </div>
+                  </div>
 
-                        <button
-                          className={`header__menu-toggle menu-toggle${mobileOpen ? ' menu-toggle--opened' : ''}`}
-                          type="button"
-                          aria-expanded={mobileOpen}
-                          aria-controls="menu-header-menu"
-                          onClick={() => toggleMobile()}
-                        >
-                          <span className="visually-hidden">Menu</span>
-                        </button>
+                  <div
+                    className="elementor-column elementor-col-16 elementor-top-column elementor-element elementor-element-404c260"
+                    data-id="404c260"
+                    data-element_type="column"
+                  >
+                    <div className="elementor-widget-wrap elementor-element-populated">
+                      <div
+                        className="elementor-element elementor-element-a70f4d3 elementor-widget__width-initial elementor-widget elementor-widget-larson-header-phone"
+                        data-id="a70f4d3"
+                        data-element_type="widget"
+                        data-widget_type="larson-header-phone.default"
+                      >
+                        <div className="elementor-widget-container">
+                          <a className="header__phone" href="https://wa.me/966506802316">
+                            <span>{c.phone}</span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div
-                  className="elementor-column elementor-col-16 elementor-top-column elementor-element elementor-element-404c260"
-                  data-id="404c260"
-                  data-element_type="column"
-                >
-                  <div className="elementor-widget-wrap elementor-element-populated">
-                    <div
-                      className="elementor-element elementor-element-a70f4d3 elementor-widget__width-initial elementor-widget elementor-widget-larson-header-phone"
-                      data-id="a70f4d3"
-                      data-element_type="widget"
-                      data-widget_type="larson-header-phone.default"
-                    >
-                      <div className="elementor-widget-container">
-                        <a className="header__phone" href="https://wa.me/966506802316">
-                          <span>{c.phone}</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
